@@ -411,9 +411,6 @@ function startGame(value){
 
     document.getElementById("rangeText").textContent="範圍：0 ~ "+range;
     document.getElementById("countText").textContent="第 0 步";
-    document.getElementById("stateText").textContent=
-        "目前可能答案：1 ~ "+(range-1);
-
     document.getElementById("endText").textContent=
         "理論上最壞情況需要 "+should+" 步。";
 
@@ -466,9 +463,8 @@ function answer(type){
                 b=rr;
                 r=rl;
             }
+        }
 
-            }
-        
         if(l===a+1){
             l=-1;
             a++;
@@ -529,39 +525,7 @@ function answer(type){
         }
     }
 
-    updateState();
     nextGuess();
-}
-
-function updateState(){
-    let text="";
-
-    if(yes){
-        text+="目前使用 DP 策略<br>";
-
-        if(l!==-1){
-            text+="左側資訊：已知答案在 "+(a+1)+" ~ "+(l-1)+" 或其他可能區域<br>";
-        }
-
-        if(r!==-1){
-            text+="右側資訊：已知答案在 "+(r+1)+" ~ "+(b-1);
-        }
-
-        if(l===-1 && r===-1){
-            text+="目前可能答案：1 ~ "+(b-1);
-        }else{
-            text+="<br>目前邊界："+a+" ~ "+b;
-        }
-    }else{
-        text+="已進入普通二分搜尋階段<br>";
-        text+="目前候選數量："+(bb-aa+1);
-
-        if(bb>=aa){
-            text+="<br>目前候選範圍："+vv[aa]+" ~ "+vv[bb];
-        }
-    }
-
-    document.getElementById("stateText").innerHTML=text;
 }
 
 function finishGame(){
