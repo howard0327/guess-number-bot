@@ -17,6 +17,7 @@ let aa=0;
 let bb=-1;
 
 let dpLoaded=false;
+let should=0;
 
 const Max=Number.MAX_SAFE_INTEGER;
 const SHIFT21=2**21;
@@ -401,17 +402,21 @@ function startGame(value){
     aa=0;
     bb=-1;
 
+    should=nosure(range,-1,-1);
+
     document.getElementById("menu").style.display="none";
     document.getElementById("game").style.display="block";
     document.getElementById("end").style.display="none";
     document.getElementById("answerButtons").style.display="block";
 
-    const should=nosure(range,-1,-1);
+    document.getElementById("rangeText").textContent=
+        "範圍：0 ~ "+range;
 
-    document.getElementById("rangeText").textContent="範圍：0 ~ "+range;
-    document.getElementById("countText").textContent="第 "+count+" 步";
-    document.getElementById("endText").textContent=
-        "理論上最壞情況需要 "+should+" 步。";
+    document.getElementById("shouldText").textContent=
+        "在 "+should+" 步內一定能猜中";
+
+    document.getElementById("countText").textContent=
+        "第 "+count+" 步";
 
     nextGuess();
 }
