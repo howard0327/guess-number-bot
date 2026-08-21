@@ -63,6 +63,12 @@ button:hover{
     margin-bottom:5px;
 }
 
+#shouldText{
+    font-size:19px;
+    font-weight:bold;
+    margin:5px 0;
+}
+
 #countText{
     font-size:18px;
     font-weight:bold;
