@@ -14,7 +14,8 @@
         <h1>終極密碼說謊版</h1>
         <p class="description">
             請在心中想一個數字，程式會嘗試猜出來。<br>
-            你最多可以說謊一次。
+            你最多可以說謊一次。<br>
+            如果程式猜中答案，不能對「猜中了」說謊。
         </p>
         <button class="mainButton" onclick="showMenu()">開始遊戲</button>
     </div>
@@ -33,6 +34,7 @@
         <h1>程式猜數字</h1>
 
         <p id="rangeText"></p>
+        <p id="shouldText"></p>
         <p id="countText">第 1 步</p>
 
         <div class="guessBox">
