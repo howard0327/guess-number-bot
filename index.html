@@ -15,19 +15,19 @@
 
     <h2>選擇範圍</h2>
 
-    <button>0 ~ 20</button>
-    <button>0 ~ 50</button>
-    <button>0 ~ 100</button>
-    <button>0 ~ 200</button>
+    <button onclick="selectRange(20)">0 ~ 20</button>
+    <button onclick="selectRange(50)">0 ~ 50</button>
+    <button onclick="selectRange(100)">0 ~ 100</button>
+    <button onclick="selectRange(200)">0 ~ 200</button>
 
     <hr>
 
     <h2>目前猜測</h2>
     <p id="guess">尚未開始</p>
 
-    <button>答案比較大</button>
-    <button>答案比較小</button>
-    <button>猜中了</button>
+    <button onclick="answer('big')">答案比較大</button>
+    <button onclick="answer('small')">答案比較小</button>
+    <button onclick="answer('correct')">猜中了</button>
 
     <p>猜測次數：<span id="count">0</span></p>
 
@@ -35,5 +35,6 @@
 
 </div>
 
+<script src="script.js"></script>
 </body>
 </html>
