@@ -27,11 +27,6 @@ h1{
     font-size:32px;
 }
 
-.subtitle{
-    margin-top:-10px;
-    font-size:22px;
-}
-
 .description{
     margin:25px 0;
     line-height:1.8;
@@ -126,10 +121,6 @@ button:hover{
 
     h1{
         font-size:28px;
-    }
-
-    .subtitle{
-        font-size:20px;
     }
 
     #guess{
