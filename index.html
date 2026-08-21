@@ -10,28 +10,54 @@
 
 <div class="game">
 
-    <h1>終極密碼</h1>
-    <p>程式猜數字</p>
+    <div id="intro">
+        <h1>終極密碼</h1>
+        <p class="subtitle">程式猜數字版</p>
+        <p class="description">
+            請在心中想一個數字，程式會嘗試猜出來。<br>
+            你最多可以說謊一次。
+        </p>
+        <button class="mainButton" onclick="showMenu()">開始遊戲</button>
+    </div>
 
-    <h2>選擇範圍</h2>
+    <div id="menu" style="display:none;">
+        <h1>選擇範圍</h1>
 
-    <button onclick="selectRange(20)">0 ~ 20</button>
-    <button onclick="selectRange(50)">0 ~ 50</button>
-    <button onclick="selectRange(100)">0 ~ 100</button>
-    <button onclick="selectRange(200)">0 ~ 200</button>
+        <button class="rangeButton" onclick="startGame(20)">0 ~ 20</button>
+        <button class="rangeButton" onclick="startGame(50)">0 ~ 50</button>
+        <button class="rangeButton" onclick="startGame(100)">0 ~ 100</button>
+        <button class="rangeButton" onclick="startGame(200)">0 ~ 200</button>
+    </div>
 
-    <hr>
+    <div id="game" style="display:none;">
 
-    <h2>目前猜測</h2>
-    <p id="guess">尚未開始</p>
+        <h1>程式猜數字</h1>
 
-    <button onclick="answer('big')">答案比較大</button>
-    <button onclick="answer('small')">答案比較小</button>
-    <button onclick="answer('correct')">猜中了</button>
+        <p id="rangeText"></p>
+        <p id="countText">第 0 步</p>
 
-    <p>猜測次數：<span id="count">0</span></p>
+        <div class="guessBox">
+            <p>程式猜：</p>
+            <div id="guess">?</div>
+        </div>
 
-    <p id="status">請選擇範圍開始遊戲</p>
+        <div id="answerButtons">
+            <button onclick="answer(1)">答案比較大</button>
+            <button onclick="answer(2)">答案比較小</button>
+            <button onclick="answer(3)">猜中了</button>
+        </div>
+
+        <div class="stateBox">
+            <p id="stateText">目前狀態</p>
+        </div>
+
+        <div id="end" style="display:none;">
+            <h2>遊戲結束</h2>
+            <p id="endText"></p>
+            <button class="mainButton" onclick="restartGame()">重新開始</button>
+        </div>
+
+    </div>
 
 </div>
 
