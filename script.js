@@ -394,8 +394,7 @@ function startGame(value){
     l=-1;
     r=-1;
 
-    guessValue=0;
-    count=0;
+    count=1;
     yes=true;
 
     vv=[];
@@ -410,7 +409,7 @@ function startGame(value){
     const should=nosure(range,-1,-1);
 
     document.getElementById("rangeText").textContent="範圍：0 ~ "+range;
-    document.getElementById("countText").textContent="第 0 步";
+    document.getElementById("countText").textContent="第 "+count+" 步";
     document.getElementById("endText").textContent=
         "理論上最壞情況需要 "+should+" 步。";
 
@@ -431,11 +430,6 @@ function answer(type){
     if(!dpLoaded || range===0){
         return;
     }
-
-    count++;
-
-    document.getElementById("countText").textContent=
-        "第 "+count+" 步";
 
     if(type===3){
         finishGame();
@@ -524,6 +518,11 @@ function answer(type){
             bb=Math.floor((aa+bb)/2)-1;
         }
     }
+
+    count++;
+
+    document.getElementById("countText").textContent=
+        "第 "+count+" 步";
 
     nextGuess();
 }
